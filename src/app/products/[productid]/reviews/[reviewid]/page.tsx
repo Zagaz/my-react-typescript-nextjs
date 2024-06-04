@@ -7,8 +7,6 @@ type ReviewDetailProps = {
      };
 };
 
-
-
 export default function ReviewDetail(
      { params }: ReviewDetailProps
 ){
