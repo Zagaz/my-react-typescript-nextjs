@@ -1,3 +1,4 @@
+import notfound from '@/app/not-found';
 import React from 'react'
 
 type ReviewDetailProps = {
@@ -10,6 +11,10 @@ type ReviewDetailProps = {
 export default function ReviewDetail(
      { params }: ReviewDetailProps
 ){
+
+     if (parseInt(params.productid) > 10) {
+          return notfound({});
+     }
      return (
           <>
                <h1>Review Detail</h1>
