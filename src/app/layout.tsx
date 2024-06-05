@@ -10,7 +10,46 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+     
+      <body
+      style={
+        {
+          margin: 0,
+          padding: 0,
+          boxSizing: 'border-box',
+        }
+      }
+      >
+        <header
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          padding: '1rem',
+          borderBottom: '1px solid #ccc',
+          backgroundColor:'lightblue' ,
+          marginBottom:'20px'
+        }
+          
+        }
+        >
+          <h2>The Header</h2>
+          
+       </header>
+        {children}
+        <footer
+             style={{
+              marginTop:'20px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              padding: '1rem',
+              borderTop: '1px solid #ccc',
+              backgroundColor:'ghostwhite'
+            }}
+        >
+          <h3>The Footer</h3>
+        
+        </footer>
+        </body>
     </html>
   )
 }
