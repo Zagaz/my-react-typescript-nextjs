@@ -1,24 +1,23 @@
-import React from 'react'
+import React from "react";
 
 type BlogLayoutProps = {
-     children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
-export default function BlogLayout({children}: BlogLayoutProps) {
-
-     const style = {
-          margin: 0,
-          padding: '20px',
-          backgroundColor: 'lightgreen',
-     };
-     
+export default function BlogLayout({ children }: BlogLayoutProps) {
+  const style = {
+    margin: 0,
+    padding: "20px",
+    backgroundColor: "lightgreen",
+  };
 
   return (
-     <>
-         <div style={style}> 
-    {children}
-    </div>
+    <>
+     
+        <div style={style}>Blog Header</div>
+        {children}
+       
+      
     </>
-
-  )
+  );
 }
