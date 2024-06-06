@@ -30,7 +30,7 @@ const card  = {
 export default function ProductDetail({ params }: ProductDetailProps) {
      const [item] = useState(params.productid); // [   
      const url = "https://fakestoreapi.com/products/"
-     const [product, setProduct] = useState<any>(null);
+     const [product, setProduct] = useState<any|null>(null);
     
     async function fetchAPI(){
           // fetch api asynch call
@@ -54,9 +54,9 @@ export default function ProductDetail({ params }: ProductDetailProps) {
                          <div style={{...card, flexDirection: 'column'}} >
                               <img src={product.image} alt={product.title} />
                               <div>
-                              <h1>{product.title}</h1>
+                              <h2>{product.title}</h2>
                               <p>{product.description}</p>
-                              <p>Price: {product.price}</p>
+                              <h2>Price: {product.price}</h2>
                               </div>
                          </div>
                     ) : (
