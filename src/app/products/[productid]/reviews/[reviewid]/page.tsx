@@ -20,6 +20,7 @@ export default function ReviewDetail(
                <h1>Review Detail</h1>
                <p>Product ID: {params.productid}</p>
                <p>Review ID: {params.reviewid}</p>
+              
           </>
      )
 }
