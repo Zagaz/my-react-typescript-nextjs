@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 import Spinner from '@/components/Spinner';
 import notfound from '@/app/not-found';
 
-
-
 type ProductDetailProps = {
      params: {
           productid: string;
@@ -21,20 +19,15 @@ const card = {
      border: '1px solid #ccc',
      borderRadius: '5px',
      width: '300px',
-
 }
-
-
-
-
 export default function ProductDetail({ params }: ProductDetailProps) {
      const [item] = useState(params.productid); // [   
-     const url = "https://fakestoreapi.com/products/"
+     const URL = "https://fakestoreapi.com/products/"
      const [product, setProduct] = useState<any | null>(null);
 
      async function fetchAPI() {
           // fetch api asynch call
-          await fetch(url + item)
+          await fetch(URL + item)
                .then(response => response.json())
                //if response is ok, set the product
                .then(json => setProduct(json))
@@ -50,7 +43,6 @@ export default function ProductDetail({ params }: ProductDetailProps) {
           return notfound({});
      }
      return (
-
           <div >
                {
                     product ? (
@@ -77,20 +69,11 @@ export default function ProductDetail({ params }: ProductDetailProps) {
                                         <h3>Price: ${product.price}</h3>
                                    )
                               }
-
-
-
-
                          </div>
-
                     ) : (
                          <Spinner />
                     )
                }
-
-
           </div>
      )
-
-
 }
