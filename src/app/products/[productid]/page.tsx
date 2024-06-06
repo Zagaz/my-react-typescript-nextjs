@@ -10,6 +10,13 @@ type ProductDetailProps = {
      };
 };
 
+export const metadata = {
+     title: `Product Detail`,
+     description: 'A page for product details',
+};
+/*
+* Styling for the card
+*/
 const card = {
      display: 'flex',
      flexDirection: 'column',
@@ -20,11 +27,17 @@ const card = {
      borderRadius: '5px',
      width: '300px',
 }
+/*
+* This is a page for product details
+*/
+
 export default function ProductDetail({ params }: ProductDetailProps) {
      const [item] = useState(params.productid); // [   
      const URL = "https://fakestoreapi.com/products/"
      const [product, setProduct] = useState<any | null>(null);
-
+     /*
+     * Fetches the product data from the fakestoreapi
+     */
      async function fetchAPI() {
           // fetch api asynch call
           await fetch(URL + item)
@@ -35,6 +48,9 @@ export default function ProductDetail({ params }: ProductDetailProps) {
                .catch(() => setProduct(null))
      }
 
+     /*
+     * useEffect to fetch the product data
+     */
      useEffect(() => {
           fetchAPI()
      }
