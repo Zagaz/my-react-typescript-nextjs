@@ -12,7 +12,7 @@ type ProductDetailProps = {
      };
 };
 
-const card = {
+const card  = {
      display : 'flex',
      flexDirection : 'column',
      justifyContent : 'space-between',
@@ -28,7 +28,7 @@ const card = {
 
 
 export default function ProductDetail({ params }: ProductDetailProps) {
-     const [item, setItem] = useState(params.productid); // [   
+     const [item] = useState(params.productid); // [   
      const url = "https://fakestoreapi.com/products/"
      const [product, setProduct] = useState<any>(null);
     
@@ -46,18 +46,18 @@ export default function ProductDetail({ params }: ProductDetailProps) {
      return (
           <div >
                {
-               product ? (
-                    <div style={card} >
-                         <img src = {product.image} alt = {product.title} />
-                         <h1>{product.title}</h1>
-                         <p>{product.description}</p>
-                         <p>Price: {product.price}</p>
-                    </div>
-               ) : (
-                    <Spinner />
-               )
-               
-
+                    product ? (
+                         <div style={{...card, flexDirection: 'column'}} >
+                              <img src={product.image} alt={product.title} />
+                              <div>
+                              <h1>{product.title}</h1>
+                              <p>{product.description}</p>
+                              <p>Price: {product.price}</p>
+                              </div>
+                         </div>
+                    ) : (
+                         <Spinner />
+                    )
                }
               
               
