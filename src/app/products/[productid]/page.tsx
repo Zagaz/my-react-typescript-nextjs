@@ -10,10 +10,7 @@ type ProductDetailProps = {
      };
 };
 
-export const metadata = {
-     title: `Product Detail`,
-     description: 'A page for product details',
-};
+
 /*
 * Styling for the card
 */
@@ -67,6 +64,11 @@ export default function ProductDetail({ params }: ProductDetailProps) {
                               {
                                    product.image && (
                                         <img src={product.image} alt={product.title} style={{ width: '100%' }} />
+                                   )
+                              }
+                              {
+                                   product.category && (
+                                        <h4>Category: {product.category}</h4>
                                    )
                               }
                               {
