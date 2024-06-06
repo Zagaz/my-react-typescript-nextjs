@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
-import { json } from 'stream/consumers';
 import { useState , useEffect } from 'react';
 import Spinner from '@/components/Spinner';
+import notfound from '@/app/not-found';
 
 
 
@@ -43,7 +43,11 @@ export default function ProductDetail({ params }: ProductDetailProps) {
           fetchAPI()
      }
      , [item])
+     if (parseInt(params.productid) > 20) {
+          return notfound({});
+     }
      return (
+
           <div >
                {
                     product ? (

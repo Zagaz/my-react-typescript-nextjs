@@ -1,6 +1,6 @@
 import React from 'react'
 
-// Make a spinner
+// A badass spinner!!!!
 
 const Spinner = () => {
      return (
