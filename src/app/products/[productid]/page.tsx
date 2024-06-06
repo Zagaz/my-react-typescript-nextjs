@@ -1,4 +1,8 @@
+'use client'
 import React from 'react'
+import { json } from 'stream/consumers';
+import { useState , useEffect } from 'react';
+import Spinner from '@/components/Spinner';
 
 
 
@@ -20,13 +24,43 @@ const card = {
       
 }
 
-export default function ProductDetail({ params }: ProductDetailProps) {
-
-   
-     return (
-          <>
-               <div> Product ID: {params.productid}</div>
     
-          </>
-     );
+
+
+export default function ProductDetail({ params }: ProductDetailProps) {
+     const [item, setItem] = useState(params.productid); // [   
+     const url = "https://fakestoreapi.com/products/"
+     const [product, setProduct] = useState<any>(null);
+    
+    async function fetchAPI(){
+          // fetch api asynch call
+          await fetch(url + item)
+          .then(response => response.json())
+          .then(json => setProduct(json))         
+         }
+
+     fetchAPI()
+     return (
+          <div >
+               {
+             
+               product ? (
+                    <div >
+                         <h1>{product.title}</h1>
+                         <img src = {product.image} alt = {product.title} />
+                         <p>{product.description}</p>
+                         <p>Price: {product.price}</p>
+                    </div>
+               ) : (
+                    <Spinner />
+               )
+               
+
+               }
+              
+              
+          </div>
+     )
+      
+     
 }
