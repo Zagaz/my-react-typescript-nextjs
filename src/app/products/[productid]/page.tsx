@@ -39,15 +39,17 @@ export default function ProductDetail({ params }: ProductDetailProps) {
           .then(json => setProduct(json))         
          }
 
-     fetchAPI()
+     useEffect(() => {
+          fetchAPI()
+     }
+     , [item])
      return (
           <div >
                {
-             
                product ? (
-                    <div >
-                         <h1>{product.title}</h1>
+                    <div style={card} >
                          <img src = {product.image} alt = {product.title} />
+                         <h1>{product.title}</h1>
                          <p>{product.description}</p>
                          <p>Price: {product.price}</p>
                     </div>
