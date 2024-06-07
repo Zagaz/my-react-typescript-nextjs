@@ -1,4 +1,7 @@
+"use client"
 import notfound from '@/app/not-found';
+import Product from '@/components/Product';
+import ProductsReview from '@/components/ProductsReview';
 import React from 'react'
 
 type ReviewDetailProps = {
@@ -19,7 +22,9 @@ export default function ReviewDetail(
           <>
                <h1>Review Detail</h1>
                <p>Product ID: {params.productid}</p>
-               <p>Review ID: {params.reviewid}</p>
+               <Product  productId={params.productid} />
+               <ProductsReview reviewId={params.reviewid} />
+               
               
           </>
      )

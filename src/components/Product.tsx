@@ -5,7 +5,6 @@ import notfound from '@/app/not-found';
 
 
 type Props = {
-     url: string;
      productId: string;
 }
 
@@ -14,9 +13,10 @@ type Props = {
 * @param productId - the id of the product
 * @returns a product details page or a not found page or a spinner (While the product is being fetched)
 */
-export default function Product({ url, productId }: Props) {
+export default function Product({productId }: Props) {
      const [item] = useState(productId); // [   
-     const URL = url;
+     const URL = "https://fakestoreapi.com/products/";
+     
      const [product, setProduct] = useState<any | null>(null);
 
      async function fetchAPI() {
@@ -27,12 +27,17 @@ export default function Product({ url, productId }: Props) {
                .then(json => setProduct(json))
                // if response is not ok, set product to null
                .catch(() => setProduct(null))
+               //error handling 
+               if (product === null) {
+                    return notfound({});
+               }
+
      }
 
      useEffect(() => {
           fetchAPI()
-     }
-          , [item])
+     }, [item])
+
      if (parseInt(item) > 20) {
           return notfound({});
      }
@@ -49,7 +54,7 @@ export default function Product({ url, productId }: Props) {
                          <div  >
 
                               {
-                                   !product.image? <Spinner /> : <img src={product.image} alt={product.title} style={{ width: '100%' , backgroundColor: "grey"}} />
+                                   !product.image? <Spinner /> : <img src={product.image} alt={product.title} style={{ width: '300px' , backgroundColor: "grey"}} />
                               }
                               {
                                    product.category && (

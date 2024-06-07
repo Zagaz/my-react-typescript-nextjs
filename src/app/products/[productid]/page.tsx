@@ -33,8 +33,6 @@ const URL = "https://fakestoreapi.com/products/";
 
 export default function ProductDetail({ params }: ProductDetailProps) {
      return (
-          <Product url={URL} productId={params.productid} />
-     )
-
-     
+          <Product productId={params.productid} />
+     )   
 }
