@@ -56,12 +56,6 @@ export default function Product({productId }: Props) {
      if (parseInt(item) > 20) {
           return notfound({});
      }
-     /*
-       <img src={product.image} alt={product.title} style={{ width: '100%' , backgroundColor: "grey"}} />
-
-     */
-
-
      return (
           <div >
                {
