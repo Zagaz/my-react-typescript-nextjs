@@ -35,6 +35,7 @@ export default function RootLayout({
           }
         >
           <h2>The Header</h2>
+          <br />
           <Nav />
 
 
