@@ -33,7 +33,11 @@ export default function Product({productId }: Props) {
      const URL = "https://fakestoreapi.com/products/";
      
      const [product, setProduct] = useState<any | null>(null);
-
+     
+     useEffect(() => {
+          fetchAPI()
+     }, [item])
+     
      async function fetchAPI() {
           // fetch api asynch call
           await fetch(URL + item)
@@ -49,9 +53,6 @@ export default function Product({productId }: Props) {
 
      }
 
-     useEffect(() => {
-          fetchAPI()
-     }, [item])
 
      if (parseInt(item) > 20) {
           return notfound({});
