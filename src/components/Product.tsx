@@ -8,6 +8,21 @@ type Props = {
      productId: string;
 }
 
+
+// style
+
+const card : React.CSSProperties = {
+     display: 'flex',
+     flexDirection: 'column',
+     justifyContent: 'space-between',
+     padding: '1rem',
+     margin: '20px',
+     border: '1px solid #ccc',
+     borderRadius: '5px',
+     width: '300px',
+}
+
+
 /*
 * @param url - the url of the api
 * @param productId - the id of the product
@@ -51,10 +66,10 @@ export default function Product({productId }: Props) {
           <div >
                {
                     product ? (
-                         <div  >
+                         <div style={card}>
 
                               {
-                                   !product.image? <Spinner /> : <img src={product.image} alt={product.title} style={{ width: '300px' , backgroundColor: "grey"}} />
+                                   !product.image? <Spinner /> : <img src={product.image} alt={product.title} style={{width: '300px' , backgroundColor: "grey"}} />
                               }
                               {
                                    product.category && (
