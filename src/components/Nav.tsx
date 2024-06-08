@@ -37,6 +37,7 @@ export default function Nav({ }: Props) {
                <nav >
                     <ul style={ul}>
                          <li style={li} key={1}><Link href='/'>Home</Link></li>
+                         <li style={li} key={2}><Link href='/order-product'>Order</Link></li>
                          <li style={li} key={2}><Link href='/products/1'>Product 1</Link></li>
                          <li style={li} key={3}><Link href='/products/2'>Product 2</Link></li>
                          <li style={li} key={4}><Link href='/products/3'>Product 3</Link></li>
