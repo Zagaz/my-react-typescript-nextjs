@@ -86,9 +86,12 @@ export default function Product({productId }: Props) {
                          </div>
                     ) : (
                          <>
-                         <h3>
-                              No product founded.
-                         </h3>
+
+                        {
+                         notfound({})
+                        }
+
+                   
                               
                          </>
                     )
