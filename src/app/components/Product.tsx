@@ -90,7 +90,7 @@ export default function Product({productId }: Props) {
                          </div>
                     ) : (
                          <>
-                              <Spinner />
+                              
                          </>
                     )
                }
