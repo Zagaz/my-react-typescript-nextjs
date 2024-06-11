@@ -1,6 +1,7 @@
 import Card from "@/components/Card";
 import ImageFull from "@/components/ImageCard";
 import Link from "next/link";
+import Section from "@/components/Section";
 
 // 100 posts
 
@@ -9,8 +10,7 @@ export default function Home() {
           <>
                <main>
                     <h1>Home</h1>
-                    <Card title="Card 1" id={1} />
-                    <Card title="Card 2" id={5} />
+                    <Section /> 
                </main>
           </>
      )
