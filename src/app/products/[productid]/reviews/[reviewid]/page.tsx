@@ -1,7 +1,7 @@
 "use client"
 import notfound from '@/app/not-found';
-import Product from '@/components/Product';
-import ProductsReview from '@/components/ProductsReview';
+import Product from '@/app/components/Product';
+import ProductsReview from '@/app/components/ProductsReview';
 import React from 'react'
 
 type ReviewDetailProps = {

@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
 import { useState, useEffect } from 'react';
-import Spinner from '@/components/Spinner';
+import Spinner from '@/app/components/Spinner';
 import notfound from '@/app/not-found';
-import Product from '@/components/Product';
+import Product from '@/app/components/Product';
 
 
 type ProductDetailProps = {

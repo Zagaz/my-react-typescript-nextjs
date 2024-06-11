@@ -1,4 +1,4 @@
-import Nav from "@/components/Nav"
+import Nav from "@/app/components/Nav"
 import Link from "next/link"
 export const metadata = {
   title: 'React + TypeScript + Next.js',

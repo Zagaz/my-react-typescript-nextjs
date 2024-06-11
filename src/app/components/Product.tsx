@@ -21,8 +21,6 @@ const card : React.CSSProperties = {
      borderRadius: '5px',
      width: '300px',
 }
-
-
 /*
 * @param url - the url of the api
 * @param productId - the id of the product
@@ -52,8 +50,6 @@ export default function Product({productId }: Props) {
                }
 
      }
-
-
      if (parseInt(item) > 20) {
           return notfound({});
      }
@@ -90,7 +86,13 @@ export default function Product({productId }: Props) {
                          </div>
                     ) : (
                          <>
-                              <Spinner />
+
+                        {
+                         notfound({})
+                        }
+
+                   
+                              
                          </>
                     )
                }
