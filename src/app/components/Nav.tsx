@@ -41,6 +41,9 @@ export default function Nav({}: Props) {
           <li style={li} key={2}>
             <Link href="/blog">Blog</Link>
           </li>
+          <li style={li} key={21}>
+            <Link href="/complex-dashboard">Parallel Routes</Link>
+          </li>
           <li style={li} key={2}>
             <Link href="/products/1">Product 1</Link>
           </li>

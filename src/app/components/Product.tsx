@@ -88,7 +88,7 @@ export default function Product({productId }: Props) {
                          <>
 
                         {
-                         notfound({})
+                         <Spinner />
                         }
 
                    
