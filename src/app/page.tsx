@@ -9,6 +9,9 @@ export default function Home() {
           <>
                <main>
                     <h1>Home</h1>
+                    <p>
+                         This project is a simple example of how to use Next.js with TypeScript and TailwindCSS.
+                    </p>
 
                     <Section /> 
                </main>
