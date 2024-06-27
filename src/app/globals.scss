@@ -1,0 +1,27 @@
+.card {
+  background-color: white;
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  &-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    &-image {
+    }
+    &-title {
+      text-decoration: none;
+      &-text {
+        color: black;
+        font-size: 30px;
+        
+      }
+      :hover {
+          color: #007bff;
+        }
+    }
+  }
+}
